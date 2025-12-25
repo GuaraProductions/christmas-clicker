@@ -1,0 +1,114 @@
+[gd_scene load_steps=21 format=3 uid="uid://cbkfu0kqe36sg"]
+
+[ext_resource type="Script" uid="uid://bljbnvjrx6gkg" path="res://Script/LojaDePresentes/LojaDePresentes.gd" id="1_f31er"]
+[ext_resource type="Script" uid="uid://cgc3jyyb6mjwa" path="res://Script/LojaDePresentes/Presente/PresenteResource.gd" id="2_oxi1y"]
+[ext_resource type="PackedScene" uid="uid://xddxhueqai13" path="res://Cena/LojaDePresentes/Presente/PresenteCena.tscn" id="3_b4tax"]
+[ext_resource type="Resource" uid="uid://dwt5dydxu7r7a" path="res://Script/LojaDePresentes/Presente/Resources/Sino.tres" id="3_fkttg"]
+[ext_resource type="Texture2D" uid="uid://cbuo01mdptvye" path="res://assets/santa.png" id="4_uxc6t"]
+[ext_resource type="Texture2D" uid="uid://c7yqwddba12dn" path="res://assets/christmas-tree.png" id="5_4w0a3"]
+[ext_resource type="Texture2D" uid="uid://dehlp3fs7oyho" path="res://assets/snowflake.png" id="5_povrs"]
+[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/presents.png" id="6_2ccf4"]
+[ext_resource type="Texture2D" uid="uid://c5tlg7t6mofvx" path="res://assets/elfs.png" id="6_o2tsw"]
+[ext_resource type="PackedScene" uid="uid://t83sdh3v3ibq" path="res://Cena/LojaDePresentes/Presente/PresenteGeradorCena.tscn" id="6_qx7re"]
+[ext_resource type="Texture2D" uid="uid://buweytkmbktmr" path="res://assets/candy.png" id="8_bsvpa"]
+[ext_resource type="Texture2D" uid="uid://gcdetg44pe7u" path="res://assets/cookie.png" id="9_7rytt"]
+[ext_resource type="Texture2D" uid="uid://bn4c6ym8gc038" path="res://assets/socks.png" id="12_5t4vn"]
+
+[sub_resource type="Resource" id="Resource_qey7y"]
+script = ExtResource("2_oxi1y")
+nome = "Papai Noel"
+textura = ExtResource("4_uxc6t")
+cena = ExtResource("3_b4tax")
+preco = 1000
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_14dcr"]
+script = ExtResource("2_oxi1y")
+nome = "Floco De Neve"
+textura = ExtResource("5_povrs")
+cena = ExtResource("3_b4tax")
+preco = 50
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_l7vme"]
+script = ExtResource("2_oxi1y")
+nome = "Biscoito"
+textura = ExtResource("9_7rytt")
+cena = ExtResource("3_b4tax")
+preco = 25
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_7rytt"]
+script = ExtResource("2_oxi1y")
+nome = "Bengala Doce"
+textura = ExtResource("8_bsvpa")
+cena = ExtResource("3_b4tax")
+preco = 75
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_2ccf4"]
+script = ExtResource("2_oxi1y")
+nome = "Árvore de Natal"
+textura = ExtResource("5_4w0a3")
+cena = ExtResource("3_b4tax")
+preco = 5000
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_qx7re"]
+script = ExtResource("2_oxi1y")
+textura = ExtResource("6_o2tsw")
+cena = ExtResource("6_qx7re")
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_qmw6x"]
+script = ExtResource("2_oxi1y")
+nome = "Meia"
+textura = ExtResource("12_5t4vn")
+cena = ExtResource("3_b4tax")
+preco = 250
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[node name="TelaLojinha" type="Window"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(720, 480)
+script = ExtResource("1_f31er")
+presentes = Array[ExtResource("2_oxi1y")]([SubResource("Resource_qey7y"), SubResource("Resource_14dcr"), SubResource("Resource_l7vme"), SubResource("Resource_7rytt"), ExtResource("3_fkttg"), SubResource("Resource_2ccf4"), SubResource("Resource_qx7re"), SubResource("Resource_qmw6x")])
+
+[node name="_" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="_" type="ScrollContainer" parent="_"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TodosPresentes" type="HFlowContainer" parent="_/_"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="__" type="CenterContainer" parent="_"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="_" type="HBoxContainer" parent="_/__"]
+layout_mode = 2
+
+[node name="_" type="TextureRect" parent="_/__/_"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_2ccf4")
+expand_mode = 1
+
+[node name="QtdDePresentes" type="Label" parent="_/__/_"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "%d"
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

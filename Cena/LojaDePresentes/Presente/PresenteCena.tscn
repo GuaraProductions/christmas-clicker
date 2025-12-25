@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xddxhueqai13"]
+
+[ext_resource type="Script" uid="uid://b6kbn1uae5vhn" path="res://Script/LojaDePresentes/Presente/PresenteCena.gd" id="1_bg5o3"]
+
+[node name="PresenteCena" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bg5o3")
+
+[node name="Sprite" type="TextureRect" parent="."]
+layout_mode = 0

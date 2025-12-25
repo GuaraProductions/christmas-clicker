@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqq26us7ca4dk"]
+
+[ext_resource type="Script" uid="uid://bcevh75n7wb53" path="res://Script/cena_principal.gd" id="1_jm2ld"]
+[ext_resource type="Texture2D" uid="uid://cl5hwgj2c0n0d" path="res://assets/wallpaper.jpg" id="2_k600c"]
+[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/presents.png" id="3_nr75o"]
+[ext_resource type="Texture2D" uid="uid://dal2gi314aq2j" path="res://assets/gold-present.png" id="4_k600c"]
+[ext_resource type="PackedScene" uid="uid://cbkfu0kqe36sg" path="res://Cena/LojaDePresentes/TelaLojinha.tscn" id="5_nr75o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr75o"]
+
+[node name="CenaPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_jm2ld")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k600c")
+expand_mode = 1
+
+[node name="ComponentesPrincipais" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="_" type="CenterContainer" parent="ComponentesPrincipais"]
+layout_mode = 2
+
+[node name="_" type="VBoxContainer" parent="ComponentesPrincipais/_"]
+layout_mode = 2
+
+[node name="Presente" type="Button" parent="ComponentesPrincipais/_/_"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nr75o")
+icon = ExtResource("3_nr75o")
+flat = true
+
+[node name="QtdPresentes" type="Label" parent="ComponentesPrincipais/_/_"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="AcessarLoja" type="Button" parent="ComponentesPrincipais"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+icon = ExtResource("4_k600c")
+flat = true
+
+[node name="Presentes" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 1137.0
+offset_bottom = 633.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SpawnInicialDosPresentes" type="Marker2D" parent="Presentes"]
+unique_name_in_owner = true
+position = Vector2(238, 132)
+
+[node name="TelaLojinha" parent="." instance=ExtResource("5_nr75o")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="ComponentesPrincipais/_/_/Presente" to="." method="_on_presente_pressed" flags=18]
+[connection signal="pressed" from="ComponentesPrincipais/AcessarLoja" to="." method="_on_acessar_loja_pressed"]

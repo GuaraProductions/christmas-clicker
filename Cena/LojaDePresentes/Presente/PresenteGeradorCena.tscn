@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://t83sdh3v3ibq"]
+
+[ext_resource type="Script" uid="uid://uw3cyanb4dw2" path="res://Script/LojaDePresentes/Presente/PresenteGeradorCena/presente_gerador_cena.gd" id="1_ioky2"]
+
+[node name="PresenteGeradorCena" type="HBoxContainer"]
+script = ExtResource("1_ioky2")
+
+[node name="NumGeradores" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Mais" type="Button" parent="."]
+z_index = 4096
+layout_mode = 2
+text = "+"
+
+[node name="GeracaoPresente" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="pressed" from="Mais" to="." method="_on_mais_pressed"]
+[connection signal="timeout" from="GeracaoPresente" to="." method="_on_geracao_presente_timeout"]
