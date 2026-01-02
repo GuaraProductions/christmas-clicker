@@ -22,14 +22,16 @@ Tanto a versão MVP, quanto a versão mais recente, você irá encontrar na aba 
 ---
 
 ### 🎵 Áudio
-* **Música:** *Holly Dazed* – RKVC
-* **Efeitos Sonoros:** * *Tiny Dink* por Idsqui
-    * *Small Bell* por steffcaffrey
+* **Música:**
+    *Holly Dazed* – RKVC
+* **Efeitos Sonoros:** 
+    - * *Tiny Dink* por Idsqui
+    - * *Small Bell* por steffcaffrey
 
 ---
 
 ### 🎨 Visual
-* **Texturas:** Todas geradas por Inteligência Artificial
+* Todas geradas por Inteligência Artificial
 
 # Licença
 
