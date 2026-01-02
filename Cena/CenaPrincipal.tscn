@@ -1,12 +1,89 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqq26us7ca4dk"]
+[gd_scene load_steps=37 format=3 uid="uid://bqq26us7ca4dk"]
 
 [ext_resource type="Script" uid="uid://bcevh75n7wb53" path="res://Script/cena_principal.gd" id="1_jm2ld"]
-[ext_resource type="Texture2D" uid="uid://cl5hwgj2c0n0d" path="res://assets/wallpaper.jpg" id="2_k600c"]
-[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/presents.png" id="3_nr75o"]
-[ext_resource type="Texture2D" uid="uid://dal2gi314aq2j" path="res://assets/gold-present.png" id="4_k600c"]
+[ext_resource type="Texture2D" uid="uid://cl5hwgj2c0n0d" path="res://assets/images/wallpaper.jpg" id="2_k600c"]
+[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/images/presents.png" id="3_nr75o"]
+[ext_resource type="StyleBox" uid="uid://x4lho43vwatc" path="res://Theme/AcessarLoja/AcessarLoja-normal.tres" id="4_jwh2g"]
+[ext_resource type="Texture2D" uid="uid://dal2gi314aq2j" path="res://assets/images/gold-present.png" id="4_k600c"]
 [ext_resource type="PackedScene" uid="uid://cbkfu0kqe36sg" path="res://Cena/LojaDePresentes/TelaLojinha.tscn" id="5_nr75o"]
+[ext_resource type="StyleBox" uid="uid://475pdd8r8lvv" path="res://Theme/Opcoes/Opcoes-Normal.tres" id="6_m8s43"]
+[ext_resource type="Texture2D" uid="uid://bq2pv7ob7jush" path="res://assets/images/gear.png" id="7_fg71l"]
+[ext_resource type="AudioStream" uid="uid://8cihj5ij3swm" path="res://assets/music/RKVC - Holly Dazed.ogg" id="8_5t5qu"]
+[ext_resource type="PackedScene" uid="uid://c6gj6iic6ek30" path="res://Cena/SFXPlayer/SFXPlayer.tscn" id="8_jai1y"]
+[ext_resource type="PackedScene" uid="uid://b1f43u64va8d8" path="res://Cena/options_menu/master_options_menu_with_tabs.tscn" id="9_jai1y"]
+[ext_resource type="StyleBox" uid="uid://26p0ef16jo35" path="res://Theme/Sair/Button-Normal.tres" id="12_4qnwi"]
+[ext_resource type="Texture2D" uid="uid://dopcr8goxoyha" path="res://assets/texture/button.png" id="13_cv8fp"]
+[ext_resource type="Texture2D" uid="uid://bwyrmh0a57d6m" path="res://assets/texture/title.png" id="14_ggcl2"]
+[ext_resource type="Script" uid="uid://bimelmc1ce1b2" path="res://addons/simple-gui-transitions/transition.gd" id="15_eds6g"]
+[ext_resource type="StyleBox" uid="uid://txra1wqgs1o6" path="res://Theme/TabContainer/TabContainer-Normal.tres" id="16_4wqx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fg71l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4qnwi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cv8fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggcl2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eds6g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4wqx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tb6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45vfy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twdwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhdfe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr75o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qjxi4"]
+texture = ExtResource("4_k600c")
+modulate_color = Color(1.269618, 1.269618, 1.269618, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5t5qu"]
+texture = ExtResource("4_k600c")
+modulate_color = Color(0.3924328, 0.3924328, 0.3924328, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwh2g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qnwi"]
+texture = ExtResource("7_fg71l")
+modulate_color = Color(1.6372112, 1.6372112, 1.6372112, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cv8fp"]
+texture = ExtResource("7_fg71l")
+modulate_color = Color(0.57996243, 0.57996243, 0.57996243, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggcl2"]
+texture = ExtResource("7_fg71l")
+modulate_color = Color(1.4683453, 1.4683453, 1.4683453, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eds6g"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("13_cv8fp")
+modulate_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tb6x"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("13_cv8fp")
+modulate_color = Color(1.4160296, 1.4160296, 1.4160296, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wqx8"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("13_cv8fp")
+modulate_color = Color(1.5790963, 1.5790963, 1.5790963, 1)
 
 [node name="CenaPrincipal" type="Control"]
 layout_mode = 3
@@ -28,7 +105,8 @@ grow_vertical = 2
 texture = ExtResource("2_k600c")
 expand_mode = 1
 
-[node name="ComponentesPrincipais" type="MarginContainer" parent="."]
+[node name="Jogo" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,29 +118,66 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="_" type="CenterContainer" parent="ComponentesPrincipais"]
+[node name="_" type="CenterContainer" parent="Jogo"]
 layout_mode = 2
 
-[node name="_" type="VBoxContainer" parent="ComponentesPrincipais/_"]
+[node name="_" type="VBoxContainer" parent="Jogo/_"]
 layout_mode = 2
 
-[node name="Presente" type="Button" parent="ComponentesPrincipais/_/_"]
+[node name="Presente" type="Button" parent="Jogo/_/_"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fg71l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4qnwi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cv8fp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ggcl2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eds6g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4wqx8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3tb6x")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_45vfy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_twdwf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_uhdfe")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nr75o")
 icon = ExtResource("3_nr75o")
 flat = true
 
-[node name="QtdPresentes" type="Label" parent="ComponentesPrincipais/_/_"]
+[node name="QtdPresentes" type="Label" parent="Jogo/_/_"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Clique no presente :)"
 horizontal_alignment = 1
 
-[node name="AcessarLoja" type="Button" parent="ComponentesPrincipais"]
+[node name="AcessarLoja" type="Button" parent="Jogo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-icon = ExtResource("4_k600c")
-flat = true
+theme_override_styles/normal = ExtResource("4_jwh2g")
+theme_override_styles/pressed = ExtResource("4_jwh2g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjxi4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5t5qu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jwh2g")
+
+[node name="Opcoes" type="Button" parent="Jogo"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("6_m8s43")
+theme_override_styles/pressed = ExtResource("6_m8s43")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4qnwi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cv8fp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ggcl2")
+
+[node name="GuiTransition" type="Node" parent="Jogo"]
+script = ExtResource("15_eds6g")
+delay = 0.3
+layout = NodePath("..")
+layout_id = "Jogo"
+metadata/_custom_type_script = "uid://bimelmc1ce1b2"
 
 [node name="Presentes" type="Control" parent="."]
 unique_name_in_owner = true
@@ -79,9 +194,227 @@ mouse_filter = 2
 unique_name_in_owner = true
 position = Vector2(238, 132)
 
-[node name="TelaLojinha" parent="." instance=ExtResource("5_nr75o")]
+[node name="Loja" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="pressed" from="ComponentesPrincipais/_/_/Presente" to="." method="_on_presente_pressed" flags=18]
-[connection signal="pressed" from="ComponentesPrincipais/AcessarLoja" to="." method="_on_acessar_loja_pressed"]
+[node name="Fundo" type="ColorRect" parent="Loja"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.37254903)
+
+[node name="_" type="MarginContainer" parent="Loja"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 55
+
+[node name="TelaLojinha" parent="Loja/_" instance=ExtResource("5_nr75o")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Sair" type="Button" parent="Loja/_"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("12_4qnwi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_eds6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3tb6x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4wqx8")
+text = "Sair"
+
+[node name="GuiTransition" type="Node" parent="Loja"]
+script = ExtResource("15_eds6g")
+animation_leave = 2
+delay = 0.3
+layout = NodePath("..")
+layout_id = "Loja"
+metadata/_custom_type_script = "uid://bimelmc1ce1b2"
+
+[node name="Música" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5t5qu")
+volume_db = -5.396
+autoplay = true
+bus = &"Música"
+
+[node name="SFXPlayer" parent="." instance=ExtResource("8_jai1y")]
+unique_name_in_owner = true
+volume_db = 3.925
+
+[node name="MenuDeOpcoes" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="MenuDeOpcoes"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.37254903)
+
+[node name="_" type="MarginContainer" parent="MenuDeOpcoes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Tela" parent="MenuDeOpcoes/_" instance=ExtResource("9_jai1y")]
+layout_mode = 2
+
+[node name="Sair" type="Button" parent="MenuDeOpcoes/_"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("12_4qnwi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_eds6g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3tb6x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4wqx8")
+text = "Sair"
+
+[node name="GuiTransition" type="Node" parent="MenuDeOpcoes"]
+script = ExtResource("15_eds6g")
+delay = 0.3
+layout = NodePath("..")
+layout_id = "MenuDeOpcoes"
+metadata/_custom_type_script = "uid://bimelmc1ce1b2"
+
+[node name="MenuPrincipal" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="_" type="VBoxContainer" parent="MenuPrincipal"]
+layout_mode = 2
+
+[node name="Titulo" type="TextureRect" parent="MenuPrincipal/_"]
+custom_minimum_size = Vector2(150, 255)
+layout_mode = 2
+texture = ExtResource("14_ggcl2")
+expand_mode = 3
+
+[node name="Jogar" type="Button" parent="MenuPrincipal/_"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="Opções" type="Button" parent="MenuPrincipal/_"]
+layout_mode = 2
+text = "Opções"
+
+[node name="Créditos" type="Button" parent="MenuPrincipal/_"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="SairDoJogo" type="Button" parent="MenuPrincipal/_"]
+layout_mode = 2
+text = "Sair"
+
+[node name="GuiTransition" type="Node" parent="MenuPrincipal"]
+script = ExtResource("15_eds6g")
+delay = 0.3
+layout = NodePath("..")
+layout_id = "MenuPrincipal"
+controls = Array[NodePath]([NodePath("../_/Jogar"), NodePath("../_/Opções"), NodePath("../_/Créditos"), NodePath("../_/SairDoJogo")])
+metadata/_custom_type_script = "uid://bimelmc1ce1b2"
+
+[node name="Creditos" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="_" type="PanelContainer" parent="Creditos"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("16_4wqx8")
+
+[node name="_" type="ScrollContainer" parent="Creditos/_"]
+layout_mode = 2
+
+[node name="TextoCreditos" type="RichTextLabel" parent="Creditos/_/_"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]
+[b][font_size=48]CRÉDITOS[/font_size][/b]
+
+[img=100x100]res://icon.png[/img]
+
+[color=gray]Desenvolvedor[/color]
+[b][font_size=32]Guará Programador[/font_size][/b]
+
+[color=gray]Plugins[/color]
+[b]Maacks's Options Menu[/b]
+[b]SimpleGUITranstion[/b]
+
+[color=gray]Música[/color]
+[b]RKVC - Holly Dazed[/b]
+
+[color=gray]Efeitos Sonoros[/color]
+[b]Tiny Dink[/b] [i](by Idsqui)[/i]
+[b]Small Bell[/b] [i](by steffcaffrey)[/i]
+
+[color=gray]Texturas[/color]
+[i]Todas geradas por Inteligência Artificial[/i]
+[/center]"
+fit_content = true
+scroll_following = true
+
+[node name="VoltarAoMenu" type="Button" parent="Creditos/_"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Voltar para o menu"
+
+[node name="GuiTransition" type="Node" parent="Creditos"]
+script = ExtResource("15_eds6g")
+delay = 0.3
+layout = NodePath("..")
+layout_id = "Creditos"
+metadata/_custom_type_script = "uid://bimelmc1ce1b2"
+
+[connection signal="pressed" from="Jogo/_/_/Presente" to="." method="_on_presente_pressed" flags=18]
+[connection signal="pressed" from="Jogo/AcessarLoja" to="." method="_on_acessar_loja_pressed"]
+[connection signal="pressed" from="Jogo/Opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="Loja/_/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuDeOpcoes/_/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuPrincipal/_/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/_/Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="MenuPrincipal/_/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="MenuPrincipal/_/SairDoJogo" to="." method="_on_sair_do_jogo_pressed"]
+[connection signal="pressed" from="Creditos/_/VoltarAoMenu" to="." method="_on_voltar_ao_menu_pressed"]

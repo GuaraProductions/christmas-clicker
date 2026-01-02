@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://1jyehmbrmykn"]
+
+[ext_resource type="Texture2D" uid="uid://dopcr8goxoyha" path="res://assets/texture/button.png" id="1_ppwhi"]
+[ext_resource type="Script" uid="uid://csjpwisgrceuu" path="res://Script/LojaDePresentes/BotaoPresente/BotaoPresente.gd" id="1_utbha"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqnip"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ppwhi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7rgux"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ppwhi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p02nx"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ppwhi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ppwhi"]
+content_margin_left = 36.0
+content_margin_top = 15.0
+content_margin_right = 36.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ppwhi")
+modulate_color = Color(0.23998526, 0.34778348, 0.34778348, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v27qr"]
+content_margin_left = 47.0
+content_margin_top = 15.0
+content_margin_right = 92.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ppwhi")
+
+[node name="BotaoPresente" type="Button"]
+custom_minimum_size = Vector2(200, 85)
+offset_right = 85.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqnip")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rgux")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p02nx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ppwhi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v27qr")
+expand_icon = true
+script = ExtResource("1_utbha")

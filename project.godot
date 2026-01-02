@@ -10,9 +10,50 @@ config_version=5
 
 [application]
 
-config/name="ChristmasClicker"
+config/name="Christmas Clicker"
+run/main_scene="uid://1jyehmbrmykn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://217700h03bw1"
+config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://cbg248wka123i"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/simple-gui-transitions/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://c0e26yt7r3stf"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_options_menus/base/translations/menus_translations.en.translation", "res://addons/maaacks_options_menus/base/translations/menus_translations.fr.translation")
+
+[maaacks_options_menus]
+
+disable_update_check=false
+disable_install_wizard=true
+copy_path="res://Cena/"
 
 [rendering]
 

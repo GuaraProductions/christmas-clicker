@@ -6,7 +6,6 @@ signal adicionar_mais_presente(quantidade: int)
 
 @onready var sprite: TextureRect = $Sprite
 @onready var geracao_presente: Timer = $GeracaoPresente
-@onready var num_geradores: Label = %NumGeradores
 
 var preco: int = 0
 var quantidade_de_presente : int = 0
@@ -22,9 +21,12 @@ func configurar_presente(presente: Presente, posicao : Vector2) -> void:
 
 	var nova_textura = ImageTexture.create_from_image(imagem)
 	
-	preco = presente.preco
+	@warning_ignore("narrowing_conversion")
+	preco = presente.preco * 0.35
 	quantidade_de_presente = 1
-	num_geradores.text = "%d" % quantidade_de_presente
+	
+	_atualizar_tooltip()
+	
 	sprite.texture = nova_textura
 	global_position = posicao
 	
@@ -38,9 +40,10 @@ func _on_mais_pressed() -> void:
 	
 	if numero_presentes >= preco:
 		quantidade_de_presente += 1
-		num_geradores.text = "%d" % quantidade_de_presente
 		mais_um_gerador.emit(preco)
-		preco += preco
+		@warning_ignore("narrowing_conversion")
+		preco += (preco * 0.6)
+		_atualizar_tooltip()
 
 func _on_geracao_presente_timeout() -> void:
 	adicionar_mais_presente.emit(quantidade_de_presente)
@@ -57,3 +60,7 @@ func _gui_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion and drag:
 		global_position = get_global_mouse_position() + drag_offset
+
+func _atualizar_tooltip() -> void:
+	tooltip_text = \
+	 "Presentes por intervalo: %d\nPróximo upgrade:%d" % [quantidade_de_presente, preco]

@@ -1,18 +1,33 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbkfu0kqe36sg"]
+[gd_scene load_steps=34 format=3 uid="uid://cbkfu0kqe36sg"]
 
 [ext_resource type="Script" uid="uid://bljbnvjrx6gkg" path="res://Script/LojaDePresentes/LojaDePresentes.gd" id="1_f31er"]
 [ext_resource type="Script" uid="uid://cgc3jyyb6mjwa" path="res://Script/LojaDePresentes/Presente/PresenteResource.gd" id="2_oxi1y"]
 [ext_resource type="PackedScene" uid="uid://xddxhueqai13" path="res://Cena/LojaDePresentes/Presente/PresenteCena.tscn" id="3_b4tax"]
 [ext_resource type="Resource" uid="uid://dwt5dydxu7r7a" path="res://Script/LojaDePresentes/Presente/Resources/Sino.tres" id="3_fkttg"]
-[ext_resource type="Texture2D" uid="uid://cbuo01mdptvye" path="res://assets/santa.png" id="4_uxc6t"]
-[ext_resource type="Texture2D" uid="uid://c7yqwddba12dn" path="res://assets/christmas-tree.png" id="5_4w0a3"]
-[ext_resource type="Texture2D" uid="uid://dehlp3fs7oyho" path="res://assets/snowflake.png" id="5_povrs"]
-[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/presents.png" id="6_2ccf4"]
-[ext_resource type="Texture2D" uid="uid://c5tlg7t6mofvx" path="res://assets/elfs.png" id="6_o2tsw"]
+[ext_resource type="Texture2D" uid="uid://cbuo01mdptvye" path="res://assets/images/santa.png" id="4_uxc6t"]
+[ext_resource type="Texture2D" uid="uid://c7yqwddba12dn" path="res://assets/images/christmas-tree.png" id="5_4w0a3"]
+[ext_resource type="Texture2D" uid="uid://dehlp3fs7oyho" path="res://assets/images/snowflake.png" id="5_povrs"]
+[ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/images/presents.png" id="6_2ccf4"]
+[ext_resource type="Texture2D" uid="uid://c5tlg7t6mofvx" path="res://assets/images/elfs.png" id="6_o2tsw"]
 [ext_resource type="PackedScene" uid="uid://t83sdh3v3ibq" path="res://Cena/LojaDePresentes/Presente/PresenteGeradorCena.tscn" id="6_qx7re"]
-[ext_resource type="Texture2D" uid="uid://buweytkmbktmr" path="res://assets/candy.png" id="8_bsvpa"]
-[ext_resource type="Texture2D" uid="uid://gcdetg44pe7u" path="res://assets/cookie.png" id="9_7rytt"]
-[ext_resource type="Texture2D" uid="uid://bn4c6ym8gc038" path="res://assets/socks.png" id="12_5t4vn"]
+[ext_resource type="Texture2D" uid="uid://buweytkmbktmr" path="res://assets/images/candy.png" id="8_bsvpa"]
+[ext_resource type="Texture2D" uid="uid://gcdetg44pe7u" path="res://assets/images/cookie.png" id="9_7rytt"]
+[ext_resource type="Texture2D" uid="uid://bn4c6ym8gc038" path="res://assets/images/socks.png" id="12_5t4vn"]
+[ext_resource type="PackedScene" uid="uid://1jyehmbrmykn" path="res://Cena/LojaDePresentes/BotaoPresente/BotaoPresente.tscn" id="13_povrs"]
+[ext_resource type="Texture2D" uid="uid://b55ivipexjn60" path="res://assets/texture/panel.png" id="14_5t4vn"]
+[ext_resource type="Texture2D" uid="uid://dq38iq1lfy5s6" path="res://assets/images/elk.png" id="14_qey7y"]
+[ext_resource type="Texture2D" uid="uid://cwuti7x1367tr" path="res://assets/images/santa-hat.png" id="15_qmw6x"]
+[ext_resource type="Texture2D" uid="uid://bwrq3jv87asig" path="res://assets/images/elf1.png" id="16_vmf1k"]
+[ext_resource type="Texture2D" uid="uid://c83fwey7k7oeq" path="res://assets/images/elf2.png" id="17_vmf1k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5t4vn"]
+texture = ExtResource("14_5t4vn")
+texture_margin_left = 83.24033
+texture_margin_top = 95.260735
+texture_margin_right = 83.26117
+texture_margin_bottom = 94.09603
+region_rect = Rect2(0.013019562, -0.082016945, 413.87256, 454.01642)
+modulate_color = Color(0.7411765, 0.9254902, 0.9411765, 1)
 
 [sub_resource type="Resource" id="Resource_qey7y"]
 script = ExtResource("2_oxi1y")
@@ -56,8 +71,10 @@ metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
 [sub_resource type="Resource" id="Resource_qx7re"]
 script = ExtResource("2_oxi1y")
+nome = "Elfos Unidos"
 textura = ExtResource("6_o2tsw")
 cena = ExtResource("6_qx7re")
+preco = 500
 metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
 [sub_resource type="Resource" id="Resource_qmw6x"]
@@ -68,47 +85,105 @@ cena = ExtResource("3_b4tax")
 preco = 250
 metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
-[node name="TelaLojinha" type="Window"]
-oversampling_override = 1.0
-initial_position = 1
-size = Vector2i(720, 480)
-script = ExtResource("1_f31er")
-presentes = Array[ExtResource("2_oxi1y")]([SubResource("Resource_qey7y"), SubResource("Resource_14dcr"), SubResource("Resource_l7vme"), SubResource("Resource_7rytt"), ExtResource("3_fkttg"), SubResource("Resource_2ccf4"), SubResource("Resource_qx7re"), SubResource("Resource_qmw6x")])
+[sub_resource type="Resource" id="Resource_vmf1k"]
+script = ExtResource("2_oxi1y")
+nome = "Veado"
+textura = ExtResource("14_qey7y")
+cena = ExtResource("3_b4tax")
+preco = 150
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
-[node name="_" type="VBoxContainer" parent="."]
+[sub_resource type="Resource" id="Resource_o43x8"]
+script = ExtResource("2_oxi1y")
+nome = "Chapeu Natalino"
+textura = ExtResource("15_qmw6x")
+cena = ExtResource("3_b4tax")
+preco = 225
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_moo6b"]
+script = ExtResource("2_oxi1y")
+nome = "Floco De Neve"
+textura = ExtResource("5_povrs")
+cena = ExtResource("3_b4tax")
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_m2ymb"]
+script = ExtResource("2_oxi1y")
+nome = "Elfo Trabalhador"
+textura = ExtResource("16_vmf1k")
+cena = ExtResource("6_qx7re")
+preco = 100
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="Resource" id="Resource_ygf35"]
+script = ExtResource("2_oxi1y")
+nome = "Elfo Engenheiro"
+textura = ExtResource("17_vmf1k")
+cena = ExtResource("6_qx7re")
+preco = 300
+metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmw6x"]
+bg_color = Color(0.34621575, 0.22858813, 0.18033063, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.24827535, 0.16164154, 0.12060446, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="TelaLojinha" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5t4vn")
+script = ExtResource("1_f31er")
+presentes = Array[ExtResource("2_oxi1y")]([SubResource("Resource_qey7y"), SubResource("Resource_14dcr"), SubResource("Resource_l7vme"), SubResource("Resource_7rytt"), ExtResource("3_fkttg"), SubResource("Resource_2ccf4"), SubResource("Resource_qx7re"), SubResource("Resource_qmw6x"), SubResource("Resource_vmf1k"), SubResource("Resource_o43x8"), SubResource("Resource_moo6b"), SubResource("Resource_m2ymb"), SubResource("Resource_ygf35")])
+botao_presente_cena = ExtResource("13_povrs")
+
+[node name="ContadorPresentes" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="_" type="TextureRect" parent="ContadorPresentes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_2ccf4")
+expand_mode = 1
+
+[node name="QtdDePresentes" type="Label" parent="ContadorPresentes"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "%d"
+
+[node name="_" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="_"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Presentes para comprar"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="_" type="ScrollContainer" parent="_"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmw6x")
 
 [node name="TodosPresentes" type="HFlowContainer" parent="_/_"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="__" type="CenterContainer" parent="_"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-
-[node name="_" type="HBoxContainer" parent="_/__"]
-layout_mode = 2
-
-[node name="_" type="TextureRect" parent="_/__/_"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("6_2ccf4")
-expand_mode = 1
-
-[node name="QtdDePresentes" type="Label" parent="_/__/_"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "%d"
-
-[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
-[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+alignment = 1
+last_wrap_alignment = 2

@@ -1,4 +1,4 @@
-extends Window
+extends PanelContainer
 class_name LojaDePresentes
 
 signal presente_comprado(presente: Presente)
@@ -7,6 +7,7 @@ signal presente_comprado(presente: Presente)
 @onready var qtd_de_presentes: Label = %QtdDePresentes
 
 @export var presentes : Array[Presente]
+@export var botao_presente_cena : PackedScene
 
 var numero_presentes : int = 0
 
@@ -14,36 +15,36 @@ func _ready() -> void:
 	
 	presentes.sort_custom(func(a, b): return a.preco < b.preco)
 	
-	for presente in presentes:
+	for presente : Presente in presentes:
+		
+		if not botao_presente_cena.can_instantiate():
+			return
 		
 		if presente == null:
 			continue
 		
-		var botao_presente = Button.new()
+		var botao_presente : BotaoPresente = botao_presente_cena.instantiate()
 		
 		todos_presentes.add_child(botao_presente)
 		
-		var imagem : Image = presente.textura.get_image()
-		
-		imagem.resize(64,64, Image.INTERPOLATE_LANCZOS)
-	
-		var nova_textura = ImageTexture.create_from_image(imagem)
-		
-		botao_presente.icon = nova_textura
-		botao_presente.text = "%d" % presente.preco
+		botao_presente.configurar_botao(presente)
 		
 		botao_presente.pressed.connect(_presente_clicado.bind(botao_presente, presente))
 	
 		
-func _presente_clicado(botao: Button, presente: Presente) -> void:
+func _presente_clicado(botao: BotaoPresente, presente: Presente) -> void:
 	
 	if numero_presentes >= presente.preco:
 		presente_comprado.emit(presente)
-		botao.disabled = true
+		botao.comprado = true
 		
-func _on_about_to_popup() -> void:
+func popup() -> void:
 	qtd_de_presentes.text = "%d" % [numero_presentes]
-
-func _on_close_requested() -> void:
-	print("fechar?")
-	visible = false
+	
+	for presente : BotaoPresente in todos_presentes.get_children():
+		
+		if presente.comprado:
+			continue
+		
+		presente.compravel = numero_presentes > presente.preco
+		presente.disabled = numero_presentes < presente.preco
