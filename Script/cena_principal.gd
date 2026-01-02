@@ -11,6 +11,7 @@ extends Control
 @onready var main_menu: CenterContainer = %MenuPrincipal
 @onready var jogo: MarginContainer = $Jogo
 @onready var creditos: MarginContainer = %Creditos
+@onready var sair_do_jogo: Button = $MenuPrincipal/_/SairDoJogo
 
 @export var qtd_de_presente_por_click : int = 1
 
@@ -18,6 +19,11 @@ var numero_presentes : int = 0 : set = _set_numero_presentes
 var comecou_jogo : bool = false
 
 func _ready() -> void:
+	
+	## Retirar o botão de sair da aplicação em versões web
+	if OS.get_name() == "Web":
+		sair_do_jogo.queue_free()
+	
 	main_menu.visible = true
 	jogo.visible = false
 	menu_de_opcoes.visible = false

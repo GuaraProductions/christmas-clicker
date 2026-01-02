@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cbkfu0kqe36sg"]
+[gd_scene load_steps=35 format=3 uid="uid://cbkfu0kqe36sg"]
 
 [ext_resource type="Script" uid="uid://bljbnvjrx6gkg" path="res://Script/LojaDePresentes/LojaDePresentes.gd" id="1_f31er"]
 [ext_resource type="Script" uid="uid://cgc3jyyb6mjwa" path="res://Script/LojaDePresentes/Presente/PresenteResource.gd" id="2_oxi1y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dehlp3fs7oyho" path="res://assets/images/snowflake.png" id="5_povrs"]
 [ext_resource type="Texture2D" uid="uid://wc52n5fbw2lp" path="res://assets/images/presents.png" id="6_2ccf4"]
 [ext_resource type="Texture2D" uid="uid://c5tlg7t6mofvx" path="res://assets/images/elfs.png" id="6_o2tsw"]
+[ext_resource type="Texture2D" uid="uid://crch6ayifueks" path="res://assets/images/factory.png" id="6_o43x8"]
 [ext_resource type="PackedScene" uid="uid://t83sdh3v3ibq" path="res://Cena/LojaDePresentes/Presente/PresenteGeradorCena.tscn" id="6_qx7re"]
 [ext_resource type="Texture2D" uid="uid://buweytkmbktmr" path="res://assets/images/candy.png" id="8_bsvpa"]
 [ext_resource type="Texture2D" uid="uid://gcdetg44pe7u" path="res://assets/images/cookie.png" id="9_7rytt"]
@@ -37,12 +38,12 @@ cena = ExtResource("3_b4tax")
 preco = 1000
 metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
-[sub_resource type="Resource" id="Resource_14dcr"]
+[sub_resource type="Resource" id="Resource_dw7lh"]
 script = ExtResource("2_oxi1y")
-nome = "Floco De Neve"
-textura = ExtResource("5_povrs")
+nome = "Fábrica"
+textura = ExtResource("6_o43x8")
 cena = ExtResource("3_b4tax")
-preco = 50
+preco = 750
 metadata/_custom_type_script = "uid://cgc3jyyb6mjwa"
 
 [sub_resource type="Resource" id="Resource_l7vme"]
@@ -144,7 +145,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_5t4vn")
 script = ExtResource("1_f31er")
-presentes = Array[ExtResource("2_oxi1y")]([SubResource("Resource_qey7y"), SubResource("Resource_14dcr"), SubResource("Resource_l7vme"), SubResource("Resource_7rytt"), ExtResource("3_fkttg"), SubResource("Resource_2ccf4"), SubResource("Resource_qx7re"), SubResource("Resource_qmw6x"), SubResource("Resource_vmf1k"), SubResource("Resource_o43x8"), SubResource("Resource_moo6b"), SubResource("Resource_m2ymb"), SubResource("Resource_ygf35")])
+presentes = Array[ExtResource("2_oxi1y")]([SubResource("Resource_qey7y"), SubResource("Resource_dw7lh"), SubResource("Resource_l7vme"), SubResource("Resource_7rytt"), ExtResource("3_fkttg"), SubResource("Resource_2ccf4"), SubResource("Resource_qx7re"), SubResource("Resource_qmw6x"), SubResource("Resource_vmf1k"), SubResource("Resource_o43x8"), SubResource("Resource_moo6b"), SubResource("Resource_m2ymb"), SubResource("Resource_ygf35")])
 botao_presente_cena = ExtResource("13_povrs")
 
 [node name="ContadorPresentes" type="HBoxContainer" parent="."]
